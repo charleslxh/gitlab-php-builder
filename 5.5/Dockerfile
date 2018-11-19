@@ -18,7 +18,7 @@ RUN composer global require hirak/prestissimo
 # Install bower
 RUN npm install bower -g
 
-COPY conf.d/* /usr/local/php/conf.d/
+COPY conf.d/* /usr/local/etc/php/conf.d/
 
 CMD ["php", "-a"]
 
