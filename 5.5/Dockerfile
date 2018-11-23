@@ -15,10 +15,9 @@ RUN docker-php-ext-install -j$(nproc) iconv mcrypt zip \
 # Install composer parallel plugin
 RUN composer global require hirak/prestissimo
 
-# Install bower
-RUN npm install bower -g
+# Install bower gulp
+RUN npm install bower gulp -g
 
 COPY conf.d/* /usr/local/etc/php/conf.d/
 
 CMD ["php", "-a"]
-
