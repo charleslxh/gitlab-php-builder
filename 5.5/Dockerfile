@@ -15,7 +15,7 @@ RUN docker-php-ext-install -j$(nproc) iconv mcrypt zip \
 # Install composer parallel plugin
 RUN composer global require hirak/prestissimo
 
-# Install bower gulp
+# Install bower gulp globaly
 RUN npm install -g \
         bower \
         gulp \
@@ -25,6 +25,11 @@ RUN npm install -g \
         webpack \
         webpack-cli \
         coffee-script
+
+# Install gulp grunt localy
+RUN npm install \
+        gulp \
+        grunt
 
 COPY conf.d/* /usr/local/etc/php/conf.d/
 
